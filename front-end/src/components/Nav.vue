@@ -14,6 +14,9 @@
         </ul>
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0" v-if="auth">
+        <li class="nav-item">
+            <router-link to="/profile" class="nav-link">Profile</router-link>
+        </li>
           <li class="nav-item">
             <a href="#" class="nav-link" @click="logout">Logout</a>
           </li>

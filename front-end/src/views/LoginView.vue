@@ -1,14 +1,14 @@
-<template lang="">
+<template>
   <div>
-      <form @submit.prevent="submit" class="form-signin">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <form @submit.prevent="submit" class="form-signin">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <input v-model="data.name" type="name" class="form-control" placeholder="Name" required>
+      <input v-model="data.name" type="name" class="form-control" placeholder="Name" required>
 
-        <input v-model="data.password" type="password" class="form-control" placeholder="Password" required>
+      <input v-model="data.password" type="password" class="form-control" placeholder="Password" required>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      </form>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
   </div>
 </template>
 <script>
