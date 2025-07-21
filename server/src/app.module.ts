@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { UserController } from './app.controller';
-import { UserService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './user.entity';
+import { UserModule } from './user/user.module';
+import { User } from './user/user.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants, dbPassword } from '../constants';
 
@@ -18,13 +17,12 @@ import { jwtConstants, dbPassword } from '../constants';
       entities: [User],
       synchronize: true,
     }),
+    UserModule,
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '1d' },
     })
-  ],
-  controllers: [UserController],
-  providers: [UserService],
+  ]
 })
 export class AppModule {}
